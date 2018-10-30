@@ -1,3 +1,3 @@
-public class ShootingRound {
-
+public class ShootingRound{
+    int numOfHits;
 }
