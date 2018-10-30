@@ -7,5 +7,6 @@ public class Athlete {
 
     public boolean betterShooter(Athlete otherAthlete){
         return this.result.shootingResult.pointsEarned() > otherAthlete.result.shootingResult.pointsEarned();
+
     }
 }
