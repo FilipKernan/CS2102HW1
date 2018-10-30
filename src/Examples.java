@@ -89,10 +89,9 @@ public class Examples {
         assertTrue(bestAthlete.hasBeaten(worstAthlete));
     }
     @Test
-    public void testHasBeatenFalse(){
+    public void testHasBeatenFalse() {
         assertFalse(worstAthlete.hasBeaten(bestAthlete));
-
-
+    }
 
     @Test
     public void testFirst() {
