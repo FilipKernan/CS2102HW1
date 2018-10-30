@@ -1,14 +1,12 @@
 public class Athlete {
     FinalResult result;
 
-    public boolean betterSkiier(Athlete competitor) {
-        if (this.result.skiingResult.pointsEarned() > competitor.result.skiingResult.pointsEarned()) {
-            return true;
-        } else {
-            return false;
-        }
+
+    boolean betterSkiier(Athlete competitor) {
+        return this.result.skiingResult.pointsEarned() < competitor.result.skiingResult.pointsEarned();
+
     }
-    
+
     public boolean betterShooter(Athlete otherAthlete){
         return this.result.shootingResult.pointsEarned() > otherAthlete.result.shootingResult.pointsEarned();
 
