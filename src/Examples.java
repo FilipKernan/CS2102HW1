@@ -63,4 +63,32 @@ public class Examples {
     FinalResult secondPlacce = new FinalResult(shooting3, skiing2);
     FinalResult thirdPlace = new FinalResult(shooting3, skiing3);
     FinalResult fourthPlace = new FinalResult(shooting3, skiing4);
+
+    Athlete bestAthlete = new Athlete(firstPlace);
+    Athlete worstAthlete = new Athlete(fourthPlace);
+
+    @Test
+    public void testBetterSkiierTrue(){
+        assertTrue(bestAthlete.betterSkiier(worstAthlete));
+    }
+    @Test
+    public void testBetterShooterTrue(){
+        assertTrue(bestAthlete.betterShooter(worstAthlete));
+    }
+    @Test
+    public void testBetterSkiierFalse(){
+        assertFalse(worstAthlete.betterSkiier(bestAthlete));
+    }
+    @Test
+    public void testBetterShooterFalse(){
+        assertFalse(worstAthlete.betterShooter(bestAthlete));
+    }
+    @Test
+    public void testHasBeatenTrue(){
+        assertTrue(bestAthlete.hasBeaten(worstAthlete));
+    }
+    @Test
+    public void testHasBeatenFalse(){
+        assertFalse(worstAthlete.hasBeaten(bestAthlete));
+    }
 }
