@@ -3,7 +3,7 @@ public class FinalResult {
     SkiingResult skiingResult;
 
     double finalScore() {
-        int placeMod = 0
+        int placeMod = 0;
         if (skiingResult.finishPlace == 1) {
             placeMod = 10;
         } else if (skiingResult.finishPlace == 2) {

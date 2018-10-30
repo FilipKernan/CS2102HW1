@@ -2,8 +2,8 @@ public class Athlete {
     FinalResult result;
 
 
-    public boolean betterShooter(Athlete otherAthlete){
-        return this.result.shootingResult.pointsEarned() > otherAthlete.result.shootingResult.pointsEarned();
+    public boolean betterShooter(Athlete competitor){
+        return this.result.shootingResult.pointsEarned() > competitor.result.shootingResult.pointsEarned();
     }
 
 
