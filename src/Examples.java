@@ -59,4 +59,8 @@ public class Examples {
         assertTrue(shooting3.getPenalties() == 12 * 60);
     }
 
+    FinalResult firstPlace = new FinalResult(shooting1, skiing1);
+    FinalResult secondPlacce = new FinalResult(shooting3, skiing2);
+    FinalResult thirdPlace = new FinalResult(shooting3, skiing3);
+    FinalResult fourthPlace = new FinalResult(shooting3, skiing4);
 }
