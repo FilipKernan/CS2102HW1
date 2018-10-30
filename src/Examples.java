@@ -17,7 +17,7 @@ public class Examples {
     }
     @Test
     public void testSkiingPenalties() {
-        assertTrue(skiing5.getPenalties() == 65);
+        assertTrue(skiing5.getPenalties() == 60);
     }
 
 
