@@ -60,7 +60,29 @@ public class Examples {
     }
 
     FinalResult firstPlace = new FinalResult(shooting1, skiing1);
-    FinalResult secondPlacce = new FinalResult(shooting3, skiing2);
+    FinalResult secondPlace = new FinalResult(shooting3, skiing2);
     FinalResult thirdPlace = new FinalResult(shooting3, skiing3);
     FinalResult fourthPlace = new FinalResult(shooting3, skiing4);
+    FinalResult assPlace = new FinalResult(shooting2, skiing5);
+
+    @Test
+    public void testFirst() {
+        assertTrue(firstPlace.finalScore() == 485 + 15 + 0 - 10);
+    }
+    @Test
+    public void testSecond() {
+        assertTrue(secondPlace.finalScore() == 490 + 15 + (12*60) - 7);
+    }
+    @Test
+    public void testThird(){
+        assertTrue(thirdPlace.finalScore() == 495 + 0 + (12*60) - 3);
+    }
+    @Test
+    public void testFourth(){
+        assertTrue(fourthPlace.finalScore() == 500 + 5 + (12*60) - 1);
+    }
+    @Test
+    public void testAss(){
+        assertTrue(assPlace.finalScore() == 695 + 60 + (20*60) - 0);
+    }
 }
