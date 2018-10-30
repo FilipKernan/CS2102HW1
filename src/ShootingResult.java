@@ -1,8 +1,17 @@
 public class ShootingResult implements IEvent{
-    ShootingRound round1;
-    ShootingRound round2;
-    ShootingRound round3;
-    ShootingRound round4;
+    ShootingRound[] rounds = new ShootingRound[4];
 
 
+    public double pointsEarned() {
+        int sum = 0;
+        for (ShootingRound round :rounds) {
+            sum = sum + round.numOfHits;
+        }
+        return sum;
+    }
+
+
+    public double getPenalties() {
+        return (20 - pointsEarned()) * 60;
+    }
 }
