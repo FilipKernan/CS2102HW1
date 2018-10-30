@@ -2,6 +2,11 @@ public class FinalResult {
     ShootingResult shootingResult;
     SkiingResult skiingResult;
 
+    public FinalResult(ShootingResult shootingResult, SkiingResult skiingResult) {
+        this.shootingResult = shootingResult;
+        this.skiingResult = skiingResult;
+    }
+
     double finalScore() {
         int placeMod = 0;
         if (skiingResult.finishPlace == 1) {

@@ -1,6 +1,9 @@
 public class Athlete {
     FinalResult result;
 
+    public Athlete(FinalResult result) {
+        this.result = result;
+    }
 
     boolean betterSkiier(Athlete competitor) {
         return this.result.skiingResult.pointsEarned() < competitor.result.skiingResult.pointsEarned();

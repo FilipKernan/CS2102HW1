@@ -1,6 +1,9 @@
 public class ShootingResult implements IEvent{
     ShootingRound[] rounds = new ShootingRound[4];
 
+    public ShootingResult(ShootingRound[] rounds) {
+        this.rounds = rounds;
+    }
 
     public double pointsEarned() {
         int sum = 0;
