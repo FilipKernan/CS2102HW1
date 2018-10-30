@@ -2,7 +2,7 @@ public class Athlete {
     FinalResult result;
 
 
-    boolean betterSkiier(Athlete competitor) {
+    public boolean betterSkiier(Athlete competitor) {
         return this.result.skiingResult.pointsEarned() < competitor.result.skiingResult.pointsEarned();
 
     }
