@@ -7,7 +7,7 @@ public class SkiingResult implements IEvent{
     int finishPlace;
     int penalties;
 
-    public SkiingResult(double lapOne, double lapTwo, double lapThree, double lapFour, int finishPlace, int penalties) {
+    public SkiingResult(int finishPlace, double lapOne, double lapTwo, double lapThree, double lapFour, int penalties) {
         this.lapOne = lapOne;
         this.lapTwo = lapTwo;
         this.lapThree = lapThree;

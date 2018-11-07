@@ -5,11 +5,11 @@ import static org.junit.Assert.*;
 public class Examples {
 
 
-    SkiingResult skiing1 = new SkiingResult(120, 125, 110, 130, 1,3);
-    SkiingResult skiing2 = new SkiingResult(120, 125,115,130,2,3);
-    SkiingResult skiing3 = new SkiingResult(125,125,115,130,3,0);
-    SkiingResult skiing4 = new SkiingResult(125 ,130,115,130, 4, 1);
-    SkiingResult skiing5 = new SkiingResult(140, 200, 170, 185, 13, 12);
+    SkiingResult skiing1 = new SkiingResult( 1,120, 125, 110, 130, 3);
+    SkiingResult skiing2 = new SkiingResult(2, 120, 125,115,130,3);
+    SkiingResult skiing3 = new SkiingResult(3,125,125,115,130,0);
+    SkiingResult skiing4 = new SkiingResult(4,125 ,130,115,130,  1);
+    SkiingResult skiing5 = new SkiingResult(13, 140, 200, 170, 185,  12);
 
     @Test
     public void testSkiingPoints() {
