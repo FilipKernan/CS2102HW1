@@ -1,23 +1,26 @@
+import java.util.LinkedList;
+
 public class SkiingResult implements IEvent{
-    double lapOne;
-    double lapTwo;
-    double lapThree;
-    double lapFour;
+    LinkedList<Double> laps = new LinkedList<Double>();
 
     int finishPlace;
     int penalties;
 
     public SkiingResult(int finishPlace, double lapOne, double lapTwo, double lapThree, double lapFour, int penalties) {
-        this.lapOne = lapOne;
-        this.lapTwo = lapTwo;
-        this.lapThree = lapThree;
-        this.lapFour = lapFour;
+        this.laps.add(lapOne);
+        this.laps.add(lapTwo);
+        this.laps.add(lapThree);
+        this.laps.add(lapFour);
         this.finishPlace = finishPlace;
         this.penalties = penalties;
     }
 
     public double pointsEarned() {
-        return lapOne + lapTwo + lapThree + lapFour;
+        double sum = 0;
+        for (Double lapTime: laps) {
+            sum += lapTime;
+        }
+        return  sum;
     }
     public double getPenalties() {
         return 5 * penalties;
