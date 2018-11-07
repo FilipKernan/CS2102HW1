@@ -172,7 +172,7 @@ public class Examples {
     }
     @Test
     public void checkShootingDNFagain() {
-        assertTrue(fakeComp2.shootingDNF().size() == 3);
+        assertTrue(fakeComp2.shootingDNF().size() == 2);
     }
     @Test
     public void checkFinalScoreForAthlete() {
