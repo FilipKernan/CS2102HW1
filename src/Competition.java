@@ -10,11 +10,11 @@ public class Competition {
         this.listOfAthletes = randomAthlete;
     }
 
-    public LinkedList<Athlete> shootingDNF() {
-        LinkedList<Athlete> didNotFinish = new LinkedList<Athlete>();
+    public LinkedList<String> shootingDNF() {
+        LinkedList<String> didNotFinish = new LinkedList<>();
         for (Athlete thisGuy: listOfAthletes) {
             if (thisGuy.result.shootingResult.ShootingRounds.size() != this.numShootingRounds) {
-                didNotFinish.add(thisGuy);
+                didNotFinish.add(thisGuy.athleteName);
             }
         }
         return didNotFinish;
