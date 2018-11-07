@@ -2,15 +2,15 @@ import java.util.LinkedList;
 
 public class ShootingResult implements IEvent{
         LinkedList<ShootingRound> numShootingRounds;
-        boolean isStanding;
 
-    public ShootingResult(ShootingRound round1, ShootingRound round2, ShootingRound round3, ShootingRound round4, boolean isStanding) {
+
+    public ShootingResult(ShootingRound round1, ShootingRound round2, ShootingRound round3, ShootingRound round4) {
         this.numShootingRounds = new LinkedList<>();
         this.numShootingRounds.add(round1);
         this.numShootingRounds.add(round2);
         this.numShootingRounds.add(round3);
         this.numShootingRounds.add(round4);
-        this.isStanding = isStanding;
+
     }
 
     public double pointsEarned() {
@@ -24,5 +24,22 @@ public class ShootingResult implements IEvent{
 
     public double getPenalties() {
         return (20 - pointsEarned()) * 60;
+    }
+
+
+    public ShootingRound bestRoundByType(boolean isStanding){
+        ShootingRound result = null;
+        for (ShootingRound s: numShootingRounds) {
+            if (s.isStanding == isStanding){
+                if(!result.equals(null)){
+                    if (result.numOfHits < s.numOfHits) {
+                        result = s;
+                    }
+                }else{
+                    result = s;
+                }
+            }
+        }
+        return result;
     }
 }
