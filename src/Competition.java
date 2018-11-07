@@ -13,7 +13,7 @@ public class Competition {
     public LinkedList<Athlete> shootingDNF() {
         LinkedList<Athlete> didNotFinish = new LinkedList<Athlete>();
         for (Athlete thisGuy: listOfAthletes) {
-            if (thisGuy.result.shootingResult.numShootingRounds.size() != this.numShootingRounds) {
+            if (thisGuy.result.shootingResult.ShootingRounds.size() != this.numShootingRounds) {
                 didNotFinish.add(thisGuy);
             }
         }
@@ -34,13 +34,19 @@ public class Competition {
         boolean didImprove = false;
         for (Athlete thisGuy: this.listOfAthletes) {
             for (Athlete anotherGuy: aComp.listOfAthletes) {
-                if (thisGuy.athleteName.equals(anotherGuy.athleteName)) {
-                    if (thisGuy.result.finalScore() < anotherGuy.result) {
+                if (thisGuy.athleteName.equals(anotherGuy.athleteName) &&
+                        thisGuy.result.finalScore() < anotherGuy.result.finalScore()) {
+
                         didImprove = true;
-                    }
+
                 }
             }
         }
         return didImprove;
     }
 }
+/*
+There could be a helper function that returns the athlete of a given name from a list.
+This would enable both finalScoreForAthlete and anyImprovement to call these methods when searching
+for a athlete with a given name.
+ */
