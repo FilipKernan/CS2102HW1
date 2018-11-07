@@ -1,4 +1,7 @@
+import org.junit.Before;
 import org.junit.Test;
+
+import java.util.LinkedList;
 
 import static org.junit.Assert.*;
 
@@ -144,5 +147,23 @@ public class Examples {
     @Test
     public void massStartResult2Penalties(){
         assertTrue(massStartResult2.getPenalties() == 5*15);
+    }
+    public LinkedList<Athlete> fakeAthleteList = new LinkedList<>();
+    @Before
+    public void createFakeList() {
+        fakeAthleteList.add(bestAthlete);
+        fakeAthleteList.add(worstAthlete);
+    }
+
+    Competition fakeComp1 = new Competition(4, fakeAthleteList);
+    Competition fakeComp2 = new Competition(5, fakeAthleteList);
+
+    @Test
+    public void checkShootingDNF() {
+        assertTrue(fakeComp1.shootingDNF().size() == 0);
+    }
+    @Test
+    public void checkShootingDNFagain() {
+        assertTrue(fakeComp2.shootingDNF().size() == 2);
     }
 }
