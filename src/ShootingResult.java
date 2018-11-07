@@ -1,18 +1,24 @@
-public class ShootingResult implements IEvent{
-    ShootingRound round1;
-    ShootingRound round2;
-    ShootingRound round3;
-    ShootingRound round4;
+import java.util.LinkedList;
 
-    public ShootingResult(ShootingRound round1, ShootingRound round2, ShootingRound round3, ShootingRound round4) {
-        this.round1 = round1;
-        this.round2 = round2;
-        this.round3 = round3;
-        this.round4 = round4;
+public class ShootingResult implements IEvent{
+        LinkedList<ShootingRound> numShootingRounds;
+        boolean isStanding;
+
+    public ShootingResult(ShootingRound round1, ShootingRound round2, ShootingRound round3, ShootingRound round4, boolean isStanding) {
+        this.numShootingRounds = new LinkedList<>();
+        this.numShootingRounds.add(round1);
+        this.numShootingRounds.add(round2);
+        this.numShootingRounds.add(round3);
+        this.numShootingRounds.add(round4);
+        this.isStanding = isStanding;
     }
 
     public double pointsEarned() {
-        return round1.numOfHits + round2.numOfHits + round3.numOfHits + round4.numOfHits;
+        double sum = 0;
+        for (ShootingRound round: numShootingRounds) {
+            sum += round.numOfHits;
+        }
+        return  sum;
     }
 
 
