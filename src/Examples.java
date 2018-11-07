@@ -71,6 +71,7 @@ public class Examples {
 
     Athlete bestAthlete = new Athlete(firstPlace, "Harry");
     Athlete worstAthlete = new Athlete(assPlace, "Conner");
+    Athlete improvedAthlete = new Athlete(secondPlace, "Conner");
 
     @Test
     public void testBetterSkiierTrue(){
@@ -153,10 +154,12 @@ public class Examples {
     public void createFakeList() {
         fakeAthleteList.add(bestAthlete);
         fakeAthleteList.add(worstAthlete);
+        fakeAthleteList.add(improvedAthlete);
     }
 
     Competition fakeComp1 = new Competition(4, fakeAthleteList);
     Competition fakeComp2 = new Competition(5, fakeAthleteList);
+    Competition fakeComp3 = new Competition(4, fakeAthleteList);
 
     @Test
     public void checkShootingDNF() {
@@ -164,6 +167,18 @@ public class Examples {
     }
     @Test
     public void checkShootingDNFagain() {
-        assertTrue(fakeComp2.shootingDNF().size() == 2);
+        assertTrue(fakeComp2.shootingDNF().size() == 3);
+    }
+    @Test
+    public void checkFinalScoreForAthlete() {
+        assertTrue(fakeComp1.finalScoreForAthlete("Conner").equals(assPlace));
+    }
+    @Test
+    public void checkAnyImprovement() {
+        assertFalse(fakeComp1.anyImprovement(fakeComp2));
+    }
+    @Test
+    public void checkMoreImprovements() {
+        assertTrue(fakeComp3.anyImprovement(fakeComp1));
     }
 }
