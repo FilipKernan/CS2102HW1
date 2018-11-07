@@ -21,15 +21,16 @@ public class Examples {
     }
 
 
-    ShootingRound roundMax = new ShootingRound(5);
-    ShootingRound roundMin = new ShootingRound(0);
-    ShootingRound roundVar = new ShootingRound(2);
+    ShootingRound roundMax = new ShootingRound(5, true);
+    ShootingRound roundMin = new ShootingRound(0, true);
+    ShootingRound roundVar = new ShootingRound(2, false);
 
 
 
     ShootingResult shooting1 = new ShootingResult(roundMax,roundMax,roundMax,roundMax);
     ShootingResult shooting2 = new ShootingResult(roundMin,roundMin,roundMin,roundMin);
     ShootingResult shooting3 = new ShootingResult(roundVar,roundVar,roundVar,roundVar);
+    ShootingResult shooting4 = new ShootingResult(roundMax,roundVar,roundVar,roundVar);
 
     @Test
     public void testPointsEarnedMax(){
@@ -65,8 +66,8 @@ public class Examples {
     FinalResult fourthPlace = new FinalResult(shooting3, skiing4);
     FinalResult assPlace = new FinalResult(shooting2, skiing5);
 
-    Athlete bestAthlete = new Athlete(firstPlace);
-    Athlete worstAthlete = new Athlete(assPlace);
+    Athlete bestAthlete = new Athlete(firstPlace, "Harry");
+    Athlete worstAthlete = new Athlete(assPlace, "Conner");
 
     @Test
     public void testBetterSkiierTrue(){
@@ -113,5 +114,35 @@ public class Examples {
     public void testAss(){
         assertTrue(assPlace.finalScore() == 695 + 60 + (20*60) - 0);
 
+    }
+
+    @Test
+    public void testBestRoundByTypeFalse(){
+        assertTrue(shooting4.bestRoundByType(false).equals(roundVar));
+    }
+    @Test
+    public void testBestRoundByTypeTrue(){
+        assertTrue(shooting4.bestRoundByType(true).equals(roundMax));
+    }
+
+    public MassStartResult massStartResult1 = new MassStartResult(1,1,10,10,20,20,10);
+    public MassStartResult massStartResult2 = new MassStartResult(1,2,10,15,20,20,15);
+
+    @Test
+    public void massStartResult1Points(){
+        assertTrue(massStartResult1.pointsEarned() == 60);
+    }
+    @Test
+    public void massStartResult2Points(){
+        assertTrue(massStartResult2.pointsEarned() == 65);
+    }
+
+    @Test
+    public void massStartResult1Penalties(){
+        assertTrue(massStartResult1.getPenalties() == 5*10);
+    }
+    @Test
+    public void massStartResult2Penalties(){
+        assertTrue(massStartResult2.getPenalties() == 5*15);
     }
 }

@@ -1,12 +1,13 @@
 import java.util.LinkedList;
 
-public class MassStartReult implements IEvent {
+public class MassStartResult implements IEvent {
     int startingPosition;
     int finishingPosition;
     LinkedList<Double> laps;
     int penalties;
 
-    public MassStartReult(int startingPosition, int finishingPosition, double lapOne, double lapTwo, double lapThree, double lapFour, int penalties) {
+    public MassStartResult(int startingPosition, int finishingPosition, double lapOne, double lapTwo, double lapThree, double lapFour, int penalties) {
+        laps = new LinkedList<>();
         this.finishingPosition = finishingPosition;
         this.laps.add(lapOne);
         this.laps.add(lapTwo);
