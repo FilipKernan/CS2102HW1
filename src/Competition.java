@@ -20,14 +20,14 @@ public class Competition {
         return didNotFinish;
     }
 
-    public FinalResult finalScoreForAthlete(String aName) {
+    public double finalScoreForAthlete(String aName) {
         FinalResult eliFuckinSucks= null;
         for (Athlete thisGuy: listOfAthletes) {
             if (thisGuy.athleteName.equals(aName)) {
                 eliFuckinSucks = thisGuy.result;
             }
         }
-        return eliFuckinSucks;
+        return eliFuckinSucks.finalScore();
     }
 
     public boolean anyImprovement (Competition aComp) {

@@ -171,7 +171,7 @@ public class Examples {
     }
     @Test
     public void checkFinalScoreForAthlete() {
-        assertTrue(fakeComp1.finalScoreForAthlete("Conner").equals(assPlace));
+        assertTrue(fakeComp1.finalScoreForAthlete("Conner") == assPlace.finalScore());
     }
     @Test
     public void checkAnyImprovement() {
