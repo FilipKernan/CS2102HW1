@@ -149,17 +149,22 @@ public class Examples {
     public void massStartResult2Penalties(){
         assertTrue(massStartResult2.getPenalties() == 5*15);
     }
-    public LinkedList<Athlete> fakeAthleteList = new LinkedList<>();
+    public LinkedList<Athlete> fakeAthleteList1 = new LinkedList<>();
+    public LinkedList<Athlete> fakeAthleteList2 = new LinkedList<>();
     @Before
     public void createFakeList() {
-        fakeAthleteList.add(bestAthlete);
-        fakeAthleteList.add(worstAthlete);
-        fakeAthleteList.add(improvedAthlete);
+        fakeAthleteList1.add(bestAthlete);
+        fakeAthleteList1.add(worstAthlete);
+    }
+    @Before
+    public void createAnotherFake() {
+        fakeAthleteList2.add(bestAthlete);
+        fakeAthleteList2.add(improvedAthlete);
     }
 
-    Competition fakeComp1 = new Competition(4, fakeAthleteList);
-    Competition fakeComp2 = new Competition(5, fakeAthleteList);
-    Competition fakeComp3 = new Competition(4, fakeAthleteList);
+    Competition fakeComp1 = new Competition(4, fakeAthleteList1);
+    Competition fakeComp2 = new Competition(5, fakeAthleteList1);
+    Competition fakeComp3 = new Competition(4, fakeAthleteList2);
 
     @Test
     public void checkShootingDNF() {
