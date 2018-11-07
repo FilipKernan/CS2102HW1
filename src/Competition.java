@@ -9,4 +9,24 @@ public class Competition {
         this.numShootingRounds = numShootingRounds;
         this.listOfAthletes = randomAthlete;
     }
+
+    public LinkedList<Athlete> shootingDNF() {
+        LinkedList<Athlete> didNotFinish = new LinkedList<Athlete>();
+        for (Athlete thisGuy: listOfAthletes) {
+            if (thisGuy.result.shootingResult.numShootingRounds.size() != this.numShootingRounds) {
+                didNotFinish.add(thisGuy);
+            }
+        }
+        return didNotFinish;
+    }
+
+    public FinalResult finalScoreForAthlete(String aName) {
+        FinalResult eliFuckinSucks= null;
+        for (Athlete thisGuy: listOfAthletes) {
+            if (thisGuy.athleteName.equals(aName)) {
+                eliFuckinSucks = thisGuy.result;
+            }
+        }
+        return eliFuckinSucks;
+    }
 }
