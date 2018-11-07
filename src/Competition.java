@@ -29,4 +29,18 @@ public class Competition {
         }
         return eliFuckinSucks;
     }
+
+    public boolean anyImprovement (Competition aComp) {
+        boolean didImprove = false;
+        for (Athlete thisGuy: this.listOfAthletes) {
+            for (Athlete anotherGuy: aComp.listOfAthletes) {
+                if (thisGuy.athleteName.equals(anotherGuy.athleteName)) {
+                    if (thisGuy.result.finalScore() < anotherGuy.result) {
+                        didImprove = true;
+                    }
+                }
+            }
+        }
+        return didImprove;
+    }
 }
